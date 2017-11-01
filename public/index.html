@@ -15,7 +15,7 @@
  * the License.
  ******************************************************************************
 -->
-<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <meta charset="utf-8">
 
 <link rel="stylesheet" href="graphmetrics/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -52,31 +52,31 @@
     }
   </script>
 
-  <div class="headerDiv">
-    <span class="sidenavButton" onclick="toggleMenu()">&#9776;</span>
-    <span class="leftHeader"></span>
+  <div class="headerDiv" role="banner">
+    <span class="sidenavButton" onclick="toggleMenu()" role="button" accesskey="n">&#9776;</span>
+    <span class="leftHeader" role="heading"></span>
     <span class="rightHeader"></span>
   </div>
 
-  <div id="sideMenu" class="sidenav">
-    <a class="sidenavEntry" onclick="socket.emit('heapdump')">Trigger Heap Dump</a>
-    <a class="sidenavEntry" onclick="socket.emit('nodereport')">Trigger Node Report</a>
-    <a class="sidenavEntry" id="toggle-profiling" onclick="toggleProfiling()"></a>
-    <a class="sidenavEntry" id="clear-profiling" onclick="clearProfilingData()">Clear Profiling Data</a>
+  <div id="sideMenu" class="sidenav" role="navigation" aria-label="TriggerEvents">
+    <a class="sidenavEntry" onclick="socket.emit('heapdump')" role="button" accesskey="3">Trigger Heap Dump</a>
+    <a class="sidenavEntry" onclick="socket.emit('nodereport')" role="button" accesskey="4">Trigger Node Report</a>
+    <a class="sidenavEntry" id="toggle-profiling" onclick="toggleProfiling()" role="button" accesskey="5"></a>
+    <a class="sidenavEntry" id="clear-profiling" onclick="clearProfilingData()" role="button" accesskey="6">Clear Profiling Data</a>
   </div>
 
-  <div id="tabs" class="container">
+  <div id="tabs" class="container" role="navigation" aria-label="Main/Profiling">
 
     <ul class="nav nav-tabs">
       <li class="active">
-        <a href="#main" id="main-tab" data-toggle="tab">Main</a>
+        <a href="#main" id="main-tab" data-toggle="tab" accesskey="1">Main</a>
       </li>
       <li>
-        <a href="#profiling" id="profiing-tab" data-toggle="tab">Profiling</a>
+        <a href="#profiling" id="profiing-tab" data-toggle="tab" accesskey="2">Profiling</a>
       </li>
     </ul>
 
-    <div class="tab-content ">
+    <div class="tab-content " role="main">
       <div class="tab-pane active" id="main">
         <div class="container-fluid">
           <div class="row">
